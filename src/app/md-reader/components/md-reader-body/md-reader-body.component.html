@@ -1,0 +1,7 @@
+<div *ngIf="bean_remote" class="col">
+  <markdown [src]="bean_remote.md_url"></markdown>
+  <hr>
+  <div *ngIf="url_link" class="row">
+    <a [href]="url_link">{{url_link}}</a>
+  </div>
+</div>

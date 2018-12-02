@@ -1,0 +1,12 @@
+<div *ngIf="data_array" class="row">
+  <div class="col">
+    <div *ngFor="let arr_sub of data_map | keyvalue" class="d-inline-block" ngbDropdown>
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{arr_sub.key}}</button>
+      <div aria-labelledby="dropdownBasic1" ngbDropdownMenu>
+        <button (click)="clickLoadRemote(arr_sub.key, arr)" *ngFor="let arr of arr_sub.value" class="dropdown-item">
+          {{arr.md_title}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,27 +1,48 @@
-# LittleostarBlogAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
+---
 
-## Development server
+##### lib
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- @ng-bootstrap/schematics
+  - ```ng add @ng-bootstrap/schematics```
+    - update ^2.0.0-alpha0 -> ^4.0.0
+    - ```"@ng-bootstrap/ng-bootstrap": "^4.0.0",```
+  
+- ngx-markdown
+  - ```npm install ngx-markdown --save```
+    - update angular.json
+    - ```
+      "styles": [
+        "src/styles.css",
+        "node_modules/prismjs/themes/prism-okaidia.css",
+        {
+          "input": "./node_modules/bootstrap/dist/css/bootstrap.css"
+        }
+      ],
+      "scripts": [
+        "node_modules/marked/marked.min.js",
+        "node_modules/prismjs/prism.js",
+        "node_modules/prismjs/components/prism-javascript.min.js",
+        "node_modules/prismjs/components/prism-css.min.js",
+        "node_modules/prismjs/components/prism-markdown.min.js",
+        "node_modules/prismjs/components/prism-typescript.min.js"
+      ]
+      ```
+    
+- angular-cli-ghpages
+  - ```npm i angular-cli-ghpages --save-dev```
 
-## Code scaffolding
+##### git
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- origin
+  - ```cmd
+    https://github.com/littleostar-blog/littleostar-blog.github.io.git
+    ```
+- origin-blog-angular
+  - ```cmd
+    https://github.com/littleostar-blog/littleostar-blog-angular.git
+    ```
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+end
