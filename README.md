@@ -32,16 +32,16 @@
 - angular-cli-ghpages
   - ```npm i angular-cli-ghpages --save-dev```
 
-##### git
+<!-- ##### git
 
-- origin
-  - ```cmd
-    https://github.com/littleostar-blog/littleostar-blog.github.io.git
-    ```
-- origin-blog-angular
-  - ```cmd
-    https://github.com/littleostar-blog/littleostar-blog-angular.git
-    ```
+<!-- - origin
+<!--   - ```cmd
+<!--     https://github.com/littleostar-blog/littleostar-blog.github.io.git
+<!--     ```
+<!-- - origin-blog-angular
+<!--   - ```cmd
+<!--     https://github.com/littleostar-blog/littleostar-blog-angular.git
+<!--     ```
 
 ---
 
