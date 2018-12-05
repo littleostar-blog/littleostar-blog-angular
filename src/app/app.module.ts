@@ -5,9 +5,9 @@ import {AppComponent} from './app.component';
 import {MarkdownModule, MarkedOptions, MarkedRenderer} from 'ngx-markdown';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {MdReaderModule} from './md-reader/md-reader.module';
-import {AppRoutingModule} from './app-routing.module';
-import {SharedModule} from './shared/shared.module';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+// import {AppRoutingModule} from './app-routing.module';
+// import {SharedModule} from './shared/shared.module';
+// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 // function that returns `MarkedOptions` with renderer override
 export function markedOptionsFactory(): MarkedOptions {
@@ -36,7 +36,7 @@ export function markedOptionsFactory(): MarkedOptions {
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
+    // AppRoutingModule,
 
     // using specific option with FactoryProvider
     MarkdownModule.forRoot({
@@ -47,7 +47,7 @@ export function markedOptionsFactory(): MarkedOptions {
       },
     }),
 
-    SharedModule,
+    // SharedModule,
     MdReaderModule,
 
   ],

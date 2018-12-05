@@ -4,7 +4,7 @@ import {Subscription} from 'rxjs';
 import {Title} from '@angular/platform-browser';
 import {MdBeanService} from '../../services/md-bean.service';
 import {MdAppService} from '../../services/md-app.service';
-import {Router} from '@angular/router';
+// import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-md-reader-nav',
@@ -21,7 +21,7 @@ export class MdReaderNavComponent implements OnInit, OnDestroy {
 
   constructor(
     private changeRef: ChangeDetectorRef,
-    private router: Router,
+    // private router: Router,
     private title: Title,
     private appService: MdAppService,
     private beanService: MdBeanService
