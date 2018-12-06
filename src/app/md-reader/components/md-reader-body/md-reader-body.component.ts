@@ -13,7 +13,6 @@ import {MdBeanService} from '../../services/md-bean.service';
 export class MdReaderBodyComponent implements OnInit, OnDestroy {
 
   bean_remote: MdBean = null;
-  url_link: string = null;
   private subscription_bean: Subscription;
 
   constructor(
@@ -24,7 +23,7 @@ export class MdReaderBodyComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription_bean = this.beanService.bean_remote$.subscribe(bean => this.bean_remote = bean);
-    this.beanService.url_link$.subscribe(link => this.url_link = link);
+    // this.beanService.url_link$.subscribe(link => this.url_link = link);
     this.changeRef.detectChanges();
   }
 

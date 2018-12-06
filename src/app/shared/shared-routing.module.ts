@@ -1,14 +1,15 @@
 import {NgModule} from '@angular/core';
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {RouterModule, Routes} from '@angular/router';
-import {MdReaderComponent} from './components/md-reader/md-reader.component';
+
 
 const routes: Routes = [
-  {path: 'reader', component: MdReaderComponent},
+  {path: '**', component: PageNotFoundComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MdReaderRoutingModule {
+export class SharedRoutingModule {
 }

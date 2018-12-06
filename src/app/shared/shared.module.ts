@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import {SharedRoutingModule} from './shared-routing.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import {PageNotFoundComponent} from './components/page-not-found/page-not-found.
     PageNotFoundComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedRoutingModule
   ]
 })
 export class SharedModule {

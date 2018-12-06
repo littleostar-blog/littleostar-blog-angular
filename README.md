@@ -15,9 +15,7 @@
       "styles": [
         "src/styles.css",
         "node_modules/prismjs/themes/prism-okaidia.css",
-        {
-          "input": "./node_modules/bootstrap/dist/css/bootstrap.css"
-        }
+        "./node_modules/bootstrap/dist/css/bootstrap.css"
       ],
       "scripts": [
         "node_modules/marked/marked.min.js",
