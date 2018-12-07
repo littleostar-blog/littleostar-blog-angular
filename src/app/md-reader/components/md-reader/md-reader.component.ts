@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-md-reader',
@@ -6,10 +6,8 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
   styleUrls: ['./md-reader.component.css']
 })
 export class MdReaderComponent implements OnInit {
-  @ViewChild('div') private div: ElementRef<HTMLDivElement>;
 
   ngOnInit(): void {
-    // console.log(`${this.div.nativeElement.clientWidth}`);
   }
 
 

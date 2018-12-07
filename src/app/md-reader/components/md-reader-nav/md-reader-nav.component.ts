@@ -4,9 +4,6 @@ import {Subscription, timer} from 'rxjs';
 import {Title} from '@angular/platform-browser';
 import {MdBeanService} from '../../services/md-bean.service';
 import {MdAppService} from '../../services/md-app.service';
-import {take} from 'rxjs/operators';
-
-// import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-md-reader-nav',
@@ -17,6 +14,8 @@ export class MdReaderNavComponent implements OnInit, OnDestroy {
 
   home_name = 'LITTLEOSTAR';
   home_image = 'assets/home/favicon_home_img.ico';
+  // home_github = 'https://github.com/littleostar-blog/littleostar-blog.github.io';
+  // home_github_name = 'GitHub';
   // data_array: string[];
   data_map: Map<string, Array<MdBean>>;
 
@@ -35,10 +34,20 @@ export class MdReaderNavComponent implements OnInit, OnDestroy {
   ) {
   }
 
+  ngOnDestroy(): void {
+    this.home_name = null;
+    this.home_image = null;
+    // this.home_github = null;
+    // this.home_github_name = null;
+    this.data_map = null;
+    this.subscription_array.unsubscribe();
+    this.subscription_map.unsubscribe();
+    this.nav = null;
+    this.navbarToggle = null;
+  }
+
   ngOnInit() {
-    timer(500).pipe(
-      take(1)
-    ).subscribe(() => {
+    timer(500).subscribe(() => {
       // this.subscription_array = this.appService.ob_array$.subscribe(data => this.data_array = data);
       this.subscription_map = this.appService.ob_map$.subscribe(data => this.data_map = data);
       this.changeRef.detectChanges();
@@ -46,20 +55,15 @@ export class MdReaderNavComponent implements OnInit, OnDestroy {
   }
 
   // (click)="clickLoadRemote(arr)"
-  clickLoadRemote(key: string, arr: MdBean) {
-    // console.log(`${arr.md_url}`);
+  clickLoadRemote(bean: MdBean) {
+    // console.log(`${bean.md_url}`);
 
     if (this.nav.nativeElement.offsetWidth <= (992 - 15 * 2)) { // when collapse, click toggle to hide menu
       this.navbarToggle.nativeElement.click();
     }
-    this.title.setTitle(arr.md_title);
-    this.beanService.sendData(arr);
-    this.beanService.dealLinkUrl(arr);
-  }
-
-  ngOnDestroy(): void {
-    this.subscription_array.unsubscribe();
-    this.subscription_map.unsubscribe();
+    this.title.setTitle(bean.md_title);
+    this.beanService.sendData(bean);
+    this.beanService.dealLinkUrl(bean);
   }
 
 }

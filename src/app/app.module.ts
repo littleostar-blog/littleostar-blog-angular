@@ -5,12 +5,12 @@ import {AppComponent} from './app.component';
 import {MarkdownModule} from 'ngx-markdown';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
-import {FrameworkBaseComponent} from './learn-material-demo/components/framework-base/framework-base.component';
 import {MdReaderComponent} from './md-reader/components/md-reader/md-reader.component';
 import {MdReaderNavComponent} from './md-reader/components/md-reader-nav/md-reader-nav.component';
 import {MdAppService} from './md-reader/services/md-app.service';
 import {MdBeanService} from './md-reader/services/md-bean.service';
 import {MdReaderBodyComponent} from './md-reader/components/md-reader-body/md-reader-body.component';
+import {PageNotFoundComponent} from './shared/components/page-not-found/page-not-found.component';
 
 // function that returns `MarkedOptions` with renderer override
 // export function markedOptionsFactory(): MarkedOptions {
@@ -35,10 +35,12 @@ import {MdReaderBodyComponent} from './md-reader/components/md-reader-body/md-re
 @NgModule({
   declarations: [
     AppComponent,
-    FrameworkBaseComponent,
+
     MdReaderNavComponent,
     MdReaderBodyComponent,
-    MdReaderComponent
+    MdReaderComponent,
+
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,6 @@ import {MdReaderBodyComponent} from './md-reader/components/md-reader-body/md-re
       //   useFactory: markedOptionsFactory,
       // },
     }),
-
 
     AppRoutingModule,
     // SharedModule,

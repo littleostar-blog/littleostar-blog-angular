@@ -15,10 +15,13 @@
           {{arr_sub.key}}
         </a>
         <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-          <a (click)="clickLoadRemote(arr_sub.key, arr)" *ngFor="let arr of arr_sub.value"
+          <a (click)="clickLoadRemote(arr)" *ngFor="let arr of arr_sub.value"
              class="dropdown-item">{{arr.md_title}}</a>
         </div>
       </li>
     </ul>
+    <!--<span class="navbar-text invisible">-->
+    <!--<a target="_blank" [href]="home_github">{{home_github_name}}</a>-->
+    <!--</span>-->
   </div>
 </nav>

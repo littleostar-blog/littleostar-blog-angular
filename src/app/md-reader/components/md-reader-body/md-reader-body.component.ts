@@ -21,14 +21,16 @@ export class MdReaderBodyComponent implements OnInit, OnDestroy {
   ) {
   }
 
+  ngOnDestroy(): void {
+    this.bean_remote = null;
+    this.subscription_bean.unsubscribe();
+  }
+
   ngOnInit() {
+    // this.ele_div_body.nativeElement.scrollTo(null);
     this.subscription_bean = this.beanService.bean_remote$.subscribe(bean => this.bean_remote = bean);
     // this.beanService.url_link$.subscribe(link => this.url_link = link);
     this.changeRef.detectChanges();
-  }
-
-  ngOnDestroy(): void {
-    this.subscription_bean.unsubscribe();
   }
 
 }
