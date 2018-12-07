@@ -16,7 +16,6 @@ export class PageNotFoundComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    // private changeRef: ChangeDetectorRef
   ) {
   }
 

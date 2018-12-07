@@ -16,7 +16,6 @@ export class MdReaderNavComponent implements OnInit, OnDestroy {
   home_image = 'assets/home/favicon_home_img.ico';
   // home_github = 'https://github.com/littleostar-blog/littleostar-blog.github.io';
   // home_github_name = 'GitHub';
-  // data_array: string[];
   data_map: Map<string, Array<MdBean>>;
 
   private subscription_array: Subscription;
@@ -27,7 +26,6 @@ export class MdReaderNavComponent implements OnInit, OnDestroy {
 
   constructor(
     private changeRef: ChangeDetectorRef,
-    // private router: Router,
     private title: Title,
     private appService: MdAppService,
     private beanService: MdBeanService,
@@ -47,8 +45,7 @@ export class MdReaderNavComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    timer(500).subscribe(() => {
-      // this.subscription_array = this.appService.ob_array$.subscribe(data => this.data_array = data);
+    timer(300).subscribe(() => {
       this.subscription_map = this.appService.ob_map$.subscribe(data => this.data_map = data);
       this.changeRef.detectChanges();
     });

@@ -13,9 +13,7 @@
     - update angular.json
     - ```
       "styles": [
-        "src/styles.css",
-        "node_modules/prismjs/themes/prism-okaidia.css",
-        "./node_modules/bootstrap/dist/css/bootstrap.css"
+        "node_modules/prismjs/themes/prism-okaidia.css"
       ],
       "scripts": [
         "node_modules/marked/marked.min.js",
