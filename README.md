@@ -3,15 +3,30 @@
 
 ##### lib
 
-- @ng-bootstrap/schematics
-  - ```ng add @ng-bootstrap/schematics```
-    - update ^2.0.0-alpha0 -> ^4.0.0
-    - ```"@ng-bootstrap/ng-bootstrap": "^4.0.0",```
-  
+- bootstrap4
+  - install
+    ```
+    npm i --save bootstrap jquery popper.js
+    ```
+  - update angular.json
+    ```json
+     "styles": [
+       "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+     ],
+     "scripts": [
+       "./node_modules/jquery/dist/jquery.min.js",
+       "./node_modules/popper.js/dist/umd/popper.min.js",
+       "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+     ]
+    ```
+    
 - ngx-markdown
-  - ```npm install ngx-markdown --save```
-    - update angular.json
-    - ```
+  - install
+    ```cmd
+    npm install ngx-markdown --save
+    ```
+  - update angular.json
+    - ```json
       "styles": [
         "node_modules/prismjs/themes/prism-okaidia.css"
       ],
@@ -24,9 +39,15 @@
         "node_modules/prismjs/components/prism-typescript.min.js"
       ]
       ```
+
+---
+
     
 - angular-cli-ghpages
-  - ```npm i angular-cli-ghpages --save-dev```
+  - 
+    ```cmd
+    npm i angular-cli-ghpages --save-dev
+    ```
 
 <!-- ##### git
 
@@ -38,6 +59,8 @@
 <!--   - ```cmd
 <!--     https://github.com/littleostar-blog/littleostar-blog-angular.git
 <!--     ```
+
+---
 
 ---
 
