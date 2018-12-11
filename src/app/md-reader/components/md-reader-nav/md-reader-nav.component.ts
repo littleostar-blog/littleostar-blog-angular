@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {MdBean} from '../../models/md-bean';
 import {Subscription, timer} from 'rxjs';
 import {Title} from '@angular/platform-browser';
@@ -12,17 +12,11 @@ import {MdAppService} from '../../services/md-app.service';
 })
 export class MdReaderNavComponent implements OnInit, OnDestroy {
 
-  home_name = 'LITTLEOSTAR';
-  home_image = 'assets/home/favicon_home_img.ico';
-  // home_github = 'https://github.com/littleostar-blog/littleostar-blog.github.io';
-  // home_github_name = 'GitHub';
-  data_map: Map<string, Array<MdBean>>;
+  data_array: Array<string>;
+  data_array_item: Array<MdBean>;
 
   private subscription_array: Subscription;
-  private subscription_map: Subscription;
-
-  @ViewChild('navbarToggle') private navbarToggle: ElementRef<HTMLButtonElement>;
-  @ViewChild('nav') private nav: ElementRef<HTMLElement>;
+  private subscription_array_item: Subscription;
 
   constructor(
     private changeRef: ChangeDetectorRef,
@@ -33,34 +27,38 @@ export class MdReaderNavComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.home_name = null;
-    this.home_image = null;
-    // this.home_github = null;
-    // this.home_github_name = null;
-    this.data_map = null;
-    this.subscription_array.unsubscribe();
-    this.subscription_map.unsubscribe();
-    this.nav = null;
-    this.navbarToggle = null;
+    this.data_array = null;
+    this.data_array_item = null;
+
+    if (this.subscription_array) {
+      this.subscription_array.unsubscribe();
+    }
+    if (this.subscription_array_item) {
+      this.subscription_array_item.unsubscribe();
+    }
   }
 
   ngOnInit() {
-    timer(300).subscribe(() => {
-      this.subscription_map = this.appService.ob_map$.subscribe(data => this.data_map = data);
+    timer(0).subscribe(() => {
+      this.subscription_array = this.appService.ob_array$.subscribe(data => this.data_array = data);
       this.changeRef.detectChanges();
     });
   }
 
-  // (click)="clickLoadRemote(arr)"
-  clickLoadRemote(bean: MdBean) {
-    // console.log(`${bean.md_url}`);
-
-    if (this.nav.nativeElement.offsetWidth <= (992 - 15 * 2)) { // when collapse, click toggle to hide menu
-      this.navbarToggle.nativeElement.click();
-    }
+  click_item(bean: MdBean) {
     this.title.setTitle(bean.md_title);
     this.beanService.sendData(bean);
     this.beanService.dealLinkUrl(bean);
+  }
+
+  click_arr(str: string) {
+    this.data_array_item = null;
+    timer(0).subscribe(() => {
+      this.subscription_array_item = this.appService.getJson('md_array', str).subscribe(data => {
+        this.data_array_item = data;
+      });
+      this.changeRef.detectChanges();
+    });
   }
 
 }

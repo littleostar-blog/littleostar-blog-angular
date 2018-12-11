@@ -4,7 +4,10 @@ import {MdReaderComponent} from './md-reader/components/md-reader/md-reader.comp
 import {PageNotFoundComponent} from './shared/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  {path: '', component: MdReaderComponent},
+  {path: '', pathMatch: 'full', redirectTo: ''},
+
+  {path: 'md', component: MdReaderComponent},
+
   {path: '**', component: PageNotFoundComponent}
 ];
 
