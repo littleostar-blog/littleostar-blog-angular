@@ -1,7 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {Subscription, timer} from 'rxjs';
 import {map, take} from 'rxjs/operators';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-page-not-found',
@@ -10,18 +11,20 @@ import {map, take} from 'rxjs/operators';
 })
 export class PageNotFoundComponent implements OnInit, OnDestroy {
 
-  tip_content = 'page not found';
-  // couter_down = 2; // this used property is must be public
+  content = 'page not found';
   private subscription: Subscription;
 
   constructor(
     private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private titleService: Title,
   ) {
+    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => this.titleService.setTitle(paramMap.get('title')));
   }
 
   ngOnDestroy(): void {
     this.router.ngOnDestroy();
-    this.tip_content = null;
+    this.content = null;
     // this.couter_down = null;
     this.subscription.unsubscribe();
   }

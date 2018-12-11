@@ -48,7 +48,6 @@ export class MdReaderNavComponent implements OnInit, OnDestroy {
   click_item(bean: MdBean) {
     this.title.setTitle(bean.md_title);
     this.beanService.sendData(bean);
-    this.beanService.dealLinkUrl(bean);
   }
 
   click_arr(str: string) {
@@ -56,8 +55,8 @@ export class MdReaderNavComponent implements OnInit, OnDestroy {
     timer(0).subscribe(() => {
       this.subscription_array_item = this.appService.getJson('md_array', str).subscribe(data => {
         this.data_array_item = data;
+        this.changeRef.detectChanges();
       });
-      this.changeRef.detectChanges();
     });
   }
 

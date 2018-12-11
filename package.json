@@ -1,12 +1,12 @@
 {
   "name": "littleostar-blog-angular",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "gh-buildd": "ng build --aot --prod --base-href=https://littleostar-blog.github.io/",
-    "gh-publish": "npx ngh --dir=dist/littleostar-blog-angular --branch=master --no-silent",
+    "gh-bd": "ng build --aot --prod --base-href=https://littleostar-blog.github.io/",
+    "gh-pb": "npx ngh --dir=dist/littleostar-blog-angular --branch=master --no-silent",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

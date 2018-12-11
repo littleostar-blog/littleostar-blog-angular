@@ -1,6 +1,7 @@
 <nav class="navbar navbar-light bg-light navbar-expand">
   <a (click)="click_item(home_name)" class="navbar-brand" routerLink="">
-    <img [src]="home_image" alt="{{home_name}}" height="30" width="30">
+    <img *ngIf="home_image" [src]="home_image" alt="{{home_name}}" height="30" width="30">
+    {{home_name}}
   </a>
   <button aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
           data-target="#navbarNavAltMarkup" data-toggle="collapse" type="button">
