@@ -1,20 +1,20 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {MdReaderComponent} from './md-reader.component';
+import {HomePageComponent} from './home-page.component';
 
-describe('MdReaderComponent', () => {
-  let component: MdReaderComponent;
-  let fixture: ComponentFixture<MdReaderComponent>;
+describe('HomePageComponent', () => {
+  let component: HomePageComponent;
+  let fixture: ComponentFixture<HomePageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MdReaderComponent]
+      declarations: [HomePageComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MdReaderComponent);
+    fixture = TestBed.createComponent(HomePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

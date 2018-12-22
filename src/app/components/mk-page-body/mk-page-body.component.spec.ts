@@ -1,20 +1,20 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {MdReaderBodyComponent} from './md-reader-body.component';
+import {MkPageBodyComponent} from './mk-page-body.component';
 
-describe('MdReaderBodyComponent', () => {
-  let component: MdReaderBodyComponent;
-  let fixture: ComponentFixture<MdReaderBodyComponent>;
+describe('MkPageBodyComponent', () => {
+  let component: MkPageBodyComponent;
+  let fixture: ComponentFixture<MkPageBodyComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MdReaderBodyComponent]
+      declarations: [MkPageBodyComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MdReaderBodyComponent);
+    fixture = TestBed.createComponent(MkPageBodyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

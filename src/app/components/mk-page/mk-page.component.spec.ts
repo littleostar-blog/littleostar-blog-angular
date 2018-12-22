@@ -1,20 +1,20 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {CoreIndexNavComponent} from './core-index-nav.component';
+import {MkPageComponent} from './mk-page.component';
 
-describe('CoreIndexNavComponent', () => {
-  let component: CoreIndexNavComponent;
-  let fixture: ComponentFixture<CoreIndexNavComponent>;
+describe('MkPageComponent', () => {
+  let component: MkPageComponent;
+  let fixture: ComponentFixture<MkPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CoreIndexNavComponent]
+      declarations: [MkPageComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CoreIndexNavComponent);
+    fixture = TestBed.createComponent(MkPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,13 @@
+<div *ngIf="navList">
+
+  <div *ngFor="let nav of navList" class="dropdown">
+    <button #dropdownMenuButton aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle"
+            data-toggle="dropdown" id="dropdownMenuButton"
+            routerLink="/mk-page/{{nav}}" type="button">{{nav}}</button>
+    <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
+      <a *ngFor="let item of itemList.get(nav)"
+         class="dropdown-item" routerLink="/mk-page/{{nav}}/{{item}}">{{item}}</a>
+    </div>
+  </div>
+
+</div>

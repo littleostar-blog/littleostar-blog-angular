@@ -2,43 +2,32 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {MarkdownModule} from 'ngx-markdown';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
-import {MdReaderComponent} from './md-reader/components/md-reader/md-reader.component';
-import {MdReaderNavComponent} from './md-reader/components/md-reader-nav/md-reader-nav.component';
-import {MdAppService} from './md-reader/services/md-app.service';
-import {MdBeanService} from './md-reader/services/md-bean.service';
-import {MdReaderBodyComponent} from './md-reader/components/md-reader-body/md-reader-body.component';
-import {PageNotFoundComponent} from './shared/components/page-not-found/page-not-found.component';
-import {CoreIndexComponent} from './core/components/core-index/core-index.component';
-import {CoreIndexNavComponent} from './core/components/core-index-nav/core-index-nav.component';
+import {MkPageComponent} from './components/mk-page/mk-page.component';
+import {HomePageComponent} from './components/home-page/home-page.component';
+import {HomePageNavComponent} from './components/home-page-nav/home-page-nav.component';
+import {MkPageNavComponent} from './components/mk-page-nav/mk-page-nav.component';
+import {MkPageBodyComponent} from './components/mk-page-body/mk-page-body.component';
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomePageComponent,
+    HomePageNavComponent,
 
-    MdReaderNavComponent,
-    MdReaderBodyComponent,
-    MdReaderComponent,
-
+    MkPageComponent,
+    MkPageNavComponent,
+    MkPageBodyComponent,
     PageNotFoundComponent,
 
-    CoreIndexComponent,
-    CoreIndexNavComponent,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-
-    MarkdownModule.forRoot({loader: HttpClient}),
-
     AppRoutingModule,
   ],
-  providers: [
-    MdAppService,
-    MdBeanService,
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

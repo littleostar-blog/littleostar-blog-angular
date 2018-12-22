@@ -1,20 +1,20 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {MdReaderNavComponent} from './md-reader-nav.component';
+import {HomePageNavComponent} from './home-page-nav.component';
 
-describe('MdReaderNavComponent', () => {
-  let component: MdReaderNavComponent;
-  let fixture: ComponentFixture<MdReaderNavComponent>;
+describe('HomePageNavComponent', () => {
+  let component: HomePageNavComponent;
+  let fixture: ComponentFixture<HomePageNavComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MdReaderNavComponent]
+      declarations: [HomePageNavComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MdReaderNavComponent);
+    fixture = TestBed.createComponent(HomePageNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
