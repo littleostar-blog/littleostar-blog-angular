@@ -6,7 +6,7 @@
 - bootstrap4
   - install
     ```
-    npm i --save bootstrap jquery popper.js
+    npm i --save bootstrap jquery@^1.9.1
     ```
   - update angular.json
     ```json
@@ -14,9 +14,8 @@
        "./node_modules/bootstrap/dist/css/bootstrap.min.css",
      ],
      "scripts": [
-       "./node_modules/jquery/dist/jquery.min.js",
-       "./node_modules/popper.js/dist/umd/popper.min.js",
-       "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+       "./node_modules/jquery/jquery.min.js",
+       "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
      ]
     ```
     
