@@ -1,22 +1,18 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {MkPageComponent} from './components/mk-page/mk-page.component';
-import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import {MdReaderComponent} from './md-reader/components/md-reader/md-reader.component';
+import {PageNotFoundComponent} from './shared/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
+  {path: '', pathMatch: 'full', redirectTo: ''},
 
-  {path: '', redirectTo: '', pathMatch: 'full'},
+  {path: 'md', component: MdReaderComponent},
 
-  {path: 'mk-page', component: MkPageComponent},
-  {path: 'mk-page/:section', component: MkPageComponent},
-  {path: 'mk-page/:section/:item', component: MkPageComponent},
-
-  {path: '**', component: PageNotFoundComponent},
-
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {enableTracing: false})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

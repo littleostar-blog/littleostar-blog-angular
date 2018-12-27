@@ -6,16 +6,17 @@
 - bootstrap4
   - install
     ```
-    npm i --save jquery bootstrap
+    npm i --save bootstrap jquery popper.js
     ```
   - update angular.json
     ```json
      "styles": [
-        "node_modules/bootstrap/dist/css/bootstrap.min.css"
+       "./node_modules/bootstrap/dist/css/bootstrap.min.css",
      ],
      "scripts": [
-        "node_modules/jquery/dist/jquery.min.js",
-        "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+       "./node_modules/jquery/dist/jquery.min.js",
+       "./node_modules/popper.js/dist/umd/popper.min.js",
+       "./node_modules/bootstrap/dist/js/bootstrap.min.js"
      ]
     ```
     
@@ -41,25 +42,23 @@
 
 ---
 
-
- - angular-cli-ghpages
+    
+- angular-cli-ghpages
   - 
     ```cmd
     npm i angular-cli-ghpages --save-dev
     ```
 
----
+<!-- ##### git
 
- ##### git
-
- - origin
-   - ```cmd
-     https://github.com/littleostar-blog/littleostar-blog.github.io.git
-     ```
- - origin-blog-angular
-   - ```cmd
-     https://github.com/littleostar-blog/littleostar-blog-angular.git
-     ```
+<!-- - origin
+<!--   - ```cmd
+<!--     https://github.com/littleostar-blog/littleostar-blog.github.io.git
+<!--     ```
+<!-- - origin-blog-angular
+<!--   - ```cmd
+<!--     https://github.com/littleostar-blog/littleostar-blog-angular.git
+<!--     ```
 
 ---
 

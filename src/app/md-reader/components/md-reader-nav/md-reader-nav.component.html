@@ -1,0 +1,14 @@
+<div *ngIf="data_array">
+  <div *ngFor="let arr of data_array" class="dropdown">
+    <a (click)="click_arr(arr)" aria-expanded="false" aria-haspopup="true"
+       class="btn btn-secondary dropdown-toggle col-12"
+       data-toggle="dropdown"
+       href="#" id="dropdownMenuLink" role="button">
+      {{arr}}
+    </a>
+    <div aria-labelledby="dropdownMenuLink" class="dropdown-menu">
+      <a (click)="click_item(arr_item)" *ngFor="let arr_item of data_array_item"
+         class="dropdown-item">{{arr_item.md_title}}</a>
+    </div>
+  </div>
+</div>
