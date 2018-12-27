@@ -2,7 +2,9 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {MdBean} from '../models/md-bean';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class MdBeanService {
   private bean_remote_subject: BehaviorSubject<MdBean> = new BehaviorSubject<MdBean>(null);
   bean_remote$: Observable<MdBean> = this.bean_remote_subject.asObservable();

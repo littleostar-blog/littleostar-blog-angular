@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-light navbar-expand">
-  <a (click)="click_item(home_name)" class="navbar-brand" routerLink="">
+  <a (click)="click_item(home_name)" class="navbar-brand" routerLink="/">
     <img *ngIf="home_image" [src]="home_image" alt="{{home_name}}" height="30" width="30">
     {{home_name}}
   </a>
@@ -9,7 +9,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a (click)="click_item(arr)" *ngFor="let arr of data_array" [routerLink]="arr"
+      <a (click)="click_item(arr)" *ngFor="let arr of data_array" routerLink="/{{arr}}"
          class="nav-item nav-link">{{arr}}</a>
     </div>
   </div>

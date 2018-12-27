@@ -1,0 +1,14 @@
+<div *ngIf="dataNavArray">
+  <div *ngFor="let nav of dataNavArray" class="dropdown">
+    <a (click)="click_nav(nav)" aria-expanded="false" aria-haspopup="true"
+       class="btn btn-secondary dropdown-toggle col-12"
+       data-toggle="dropdown" href="#"
+       id="dropdownMenuLink" role="button">
+      {{nav}}
+    </a>
+    <div aria-labelledby="dropdownMenuLink" class="dropdown-menu">
+      <a (click)="click_item(item)" *ngFor="let item of dataItemArray" class="dropdown-item"
+         routerLink="/md-page/{{nav}}/{{item.md_title}}">{{item.md_title}}</a>
+    </div>
+  </div>
+</div>

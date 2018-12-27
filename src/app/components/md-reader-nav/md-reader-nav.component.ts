@@ -1,9 +1,10 @@
-import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {MdBean} from '../../models/md-bean';
-import {Subscription, timer} from 'rxjs';
+import {Subscription} from 'rxjs';
 import {Title} from '@angular/platform-browser';
 import {MdBeanService} from '../../services/md-bean.service';
 import {MdAppService} from '../../services/md-app.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-md-reader-nav',
@@ -12,13 +13,20 @@ import {MdAppService} from '../../services/md-app.service';
 })
 export class MdReaderNavComponent implements OnInit, OnDestroy {
 
-  data_array: Array<string>;
-  data_array_item: Array<MdBean>;
+  @Input()
+  nav: string;
+  @Input()
+  item: string;
+
+  dataNavArray: Array<string>;
+  dataItemArray: Array<MdBean>;
 
   private subscription_array: Subscription;
   private subscription_array_item: Subscription;
 
   constructor(
+    private router: Router,
+    private route: ActivatedRoute,
     private changeRef: ChangeDetectorRef,
     private title: Title,
     private appService: MdAppService,
@@ -27,8 +35,8 @@ export class MdReaderNavComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.data_array = null;
-    this.data_array_item = null;
+    this.dataNavArray = null;
+    this.dataItemArray = null;
 
     if (this.subscription_array) {
       this.subscription_array.unsubscribe();
@@ -39,8 +47,8 @@ export class MdReaderNavComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    timer(0).subscribe(() => {
-      this.subscription_array = this.appService.ob_array$.subscribe(data => this.data_array = data);
+    this.subscription_array = this.appService.getNavList().subscribe(data => {
+      this.dataNavArray = data;
       this.changeRef.detectChanges();
     });
   }
@@ -50,13 +58,11 @@ export class MdReaderNavComponent implements OnInit, OnDestroy {
     this.beanService.sendData(bean);
   }
 
-  click_arr(str: string) {
-    this.data_array_item = null;
-    timer(0).subscribe(() => {
-      this.subscription_array_item = this.appService.getJson('md_array', str).subscribe(data => {
-        this.data_array_item = data;
-        this.changeRef.detectChanges();
-      });
+  click_nav(nav: string) {
+    this.dataItemArray = null;
+    this.subscription_array_item = this.appService.getItemList(nav).subscribe(data => {
+      this.dataItemArray = data;
+      this.changeRef.detectChanges();
     });
   }
 

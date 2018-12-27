@@ -1,6 +1,5 @@
 import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {Title} from '@angular/platform-browser';
-import {timer} from 'rxjs';
 import {Router} from '@angular/router';
 
 @Component({
@@ -13,7 +12,7 @@ export class CoreIndexNavComponent implements OnInit, OnDestroy {
   home_name = 'Home';
   // home_image = 'assets/home/favicon_home_img.ico';
   home_image = null;
-  data_array = ['md'];
+  data_array = ['md-page'];
 
   constructor(
     private router: Router,
@@ -29,10 +28,8 @@ export class CoreIndexNavComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    timer(0).subscribe(() => {
-      this.titleService.setTitle(this.home_name);
-      this.router.navigateByUrl('md');
-    });
+    this.titleService.setTitle(this.home_name);
+    // this.router.navigateByUrl('md-page').catch().finally();
   }
 
   click_item(arr: string) {
